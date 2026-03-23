@@ -1,11 +1,65 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import background from '../assets/background.webp';
 ---
 
 <Layout>
-	<Welcome />
+  <div 
+    id="background-layer" 
+    style={{ backgroundImage: `url(${background.src})` }}
+  ></div>
+  
+  <div id="container">
+    <main>
+      <section id="wrapper">
+		<div id="hero">
+			<h1>Pawtasticsouls from Anna coming soon</h1>
+		</div>
+      </section>
+    </main>
+  </div>
 </Layout>
+
+<style>
+  #background-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #f0f0f0; 
+  }
+
+  #container {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+  }
+
+  main {
+    background: transparent;
+  }
+
+  #wrapper {
+	display: flex;
+justify-content: center;
+margin-top: 200px;
+  }
+
+  #hero {
+	background-color: white;
+	width:min-content;
+	border-radius:100%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    color: #111827;
+    text-align: center;
+	padding: 36px;
+  }
+</style>
