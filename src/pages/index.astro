@@ -6,82 +6,24 @@ import background from '../assets/background.webp';
 <Layout>
   <div 
     id="background-layer" 
+    class="fixed inset-0 -z-10 w-screen h-screen bg-no-repeat bg-cover bg-center overflow-hidden"
     style={{ backgroundImage: `url(${background.src})` }}
   ></div>
   
-  <div id="container">
-    <main>
-      <section id="wrapper">
-        <div id="hero">
-          <h1>Pawtasticsouls from Anna coming soon</h1>
+  <div id="container" class="relative z-10 h-screen w-full overflow-hidden">
+    <main class="h-full flex items-center justify-center bg-transparent">
+      <section id="wrapper" class="flex justify-center p-5">
+        
+        <div 
+          id="hero" 
+          class="bg-white w-full max-w-75 sm:max-w-125 aspect-square rounded-full flex items-center justify-center shadow-2xl transition-all duration-300"
+        >
+          <h1 class="text-2xl sm:text-[2.5rem] text-[#111827] text-center p-10 m-0 font-bold leading-tight">
+            Pawtasticsouls from Anna coming soon!
+          </h1>
         </div>
+
       </section>
     </main>
   </div>
 </Layout>
-
-<style>
-  /* 1. Ensure the background is truly locked and non-scrolling */
-  #background-layer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-  }
-
-  #container {
-    position: relative;
-    z-index: 1;
-    height: 100vh; 
-    width: 100%;
-    overflow: hidden; 
-  }
-
-  main {
-    height: 100%;
-    display: flex;
-    align-items: center;    
-    justify-content: center; 
-    background: transparent;
-  }
-
-  #wrapper {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-  }
-
-  #hero {
-    background-color: white;
-    max-width: 500px;
-    border-radius: 50%; 
-    aspect-ratio: 1 / 1; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    color: #111827;
-    text-align: center;
-    padding: 40px;
-    margin: 0;
-  }
-
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 1.5rem;
-    }
-    #hero {
-      max-width: 300px;
-    }
-  }
-</style>
