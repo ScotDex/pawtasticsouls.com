@@ -12,15 +12,16 @@ import background from '../assets/background.webp';
   <div id="container">
     <main>
       <section id="wrapper">
-		<div id="hero">
-			<h1>Pawtasticsouls from Anna coming soon</h1>
-		</div>
+        <div id="hero">
+          <h1>Pawtasticsouls from Anna coming soon</h1>
+        </div>
       </section>
     </main>
   </div>
 </Layout>
 
 <style>
+  /* 1. Ensure the background is truly locked and non-scrolling */
   #background-layer {
     position: fixed;
     top: 0;
@@ -31,35 +32,56 @@ import background from '../assets/background.webp';
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-color: #f0f0f0; 
+    overflow: hidden;
   }
 
   #container {
     position: relative;
     z-index: 1;
-    min-height: 100vh;
+    height: 100vh; 
+    width: 100%;
+    overflow: hidden; 
   }
 
   main {
+    height: 100%;
+    display: flex;
+    align-items: center;    
+    justify-content: center; 
     background: transparent;
   }
 
   #wrapper {
-	display: flex;
-justify-content: center;
-margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
   }
 
   #hero {
-	background-color: white;
-	width:min-content;
-	border-radius:100%;
+    background-color: white;
+    max-width: 500px;
+    border-radius: 50%; 
+    aspect-ratio: 1 / 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   }
 
   h1 {
     font-size: 2.5rem;
     color: #111827;
     text-align: center;
-	padding: 36px;
+    padding: 40px;
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    #hero {
+      max-width: 300px;
+    }
   }
 </style>
